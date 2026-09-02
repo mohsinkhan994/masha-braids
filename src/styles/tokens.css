@@ -1,0 +1,8 @@
+:root {
+  --sand: #efe2dc;
+  --ink: #352827;
+  --muted: #776461;
+  --berry: #71333f;
+}
+
+::selection { color: white; background: var(--berry); }
