@@ -52,9 +52,10 @@ h1 em, h2 em { color: var(--berry); font-weight: 400; }
 .messenger-whatsapp { background: linear-gradient(145deg, #8d4b59, var(--berry)); }
 .messenger-telegram { background: linear-gradient(145deg, #c17f89, #965361); }
 .messenger-max { background: linear-gradient(145deg, #b88968, #896047); }
-.max-mark { font: italic 800 18px/1 Georgia, serif; }
-.messenger-tooltip { position: absolute; top: 50%; right: 53px; width: max-content; padding: 7px 10px; border-radius: 9px; color: white; background: rgba(48,32,33,.9); opacity: 0; transform: translate(6px,-50%); pointer-events: none; transition: opacity .2s, transform .2s; font-size: 10px; font-weight: 700; }
-.messenger-link:hover .messenger-tooltip, .messenger-link:focus-visible .messenger-tooltip { opacity: 1; transform: translate(0,-50%); }
+.max-mark { width: 23px; height: 23px; display: block; }
+.messenger-tooltip { position: absolute; z-index: 2; top: 50%; right: 56px; width: max-content; padding: 8px 12px; border: 1px solid rgba(255,255,255,.6); border-radius: 11px; color: var(--ink); background: rgba(255,248,245,.88); box-shadow: 0 9px 24px rgba(67,38,39,.16); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); opacity: 0; visibility: hidden; transform: translate(8px,-50%) scale(.96); transform-origin: right center; pointer-events: none; transition: opacity .2s ease, visibility .2s ease, transform .2s ease; font-size: 11px; font-weight: 750; }
+.messenger-tooltip::after { content: ''; position: absolute; top: 50%; right: -5px; width: 9px; height: 9px; border-top: 1px solid rgba(255,255,255,.6); border-right: 1px solid rgba(255,255,255,.6); background: rgba(255,248,245,.88); transform: translateY(-50%) rotate(45deg); }
+.messenger-link:hover .messenger-tooltip, .messenger-link:focus-visible .messenger-tooltip, .messenger-link:focus .messenger-tooltip { opacity: 1; visibility: visible; transform: translate(0,-50%) scale(1); }
 .messenger-pending { opacity: .48; cursor: not-allowed; }.messenger-pending:hover { transform: none; box-shadow: 0 8px 20px rgba(51,34,34,.14); }.pending-dot { position: absolute; top: 3px; right: 3px; width: 7px; height: 7px; border: 1px solid rgba(255,255,255,.8); border-radius: 50%; background: #f1c05c; }
 
 .hero { min-height: 790px; padding-top: 165px; display: grid; grid-template-columns: .93fr 1.07fr; align-items: center; gap: 60px; }
