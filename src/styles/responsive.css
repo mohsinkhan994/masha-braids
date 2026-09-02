@@ -10,6 +10,7 @@
   .portrait-frame { left: 0; }
   .section-heading { grid-template-columns: 1fr; }
   .service-grid { grid-template-columns: 1fr 1fr; }
+  .portfolio-card { grid-template-columns: 1fr; }.portfolio-photo { min-height: 620px; }.portfolio-copy { padding: 58px 46px; }
   .about { grid-template-columns: 1fr; }.about-photo { width: min(500px, 88%); min-height: 600px; margin: 0 auto; }.about-copy { margin-top: -90px; padding-top: 115px; }
   .booking { padding: 55px; grid-template-columns: 1fr; gap: 45px; }
 }
@@ -25,6 +26,7 @@
   .hero-proof { margin-top: 34px; }
   .hero-visual { height: 510px; margin-top: 8px; }.portrait-frame { inset: 0 5px 0 5px; border-radius: 190px 190px 30px 30px; }.location-pill { top: 60px; right: -8px; }.scribble { display: none; }
   .services { padding-top: 95px; }.section-heading { margin-bottom: 34px; }.section-heading > p { font-size: 14px; }.service-grid { grid-template-columns: 1fr; }.service-card { min-height: 430px; }
+  .portfolio { padding: 55px 0 35px; }.portfolio-card { border-radius: 30px; }.portfolio-photo { min-height: 470px; border-radius: 23px; }.portfolio-copy { padding: 43px 21px 35px; }.portfolio-copy > p { font-size: 14px; }.portfolio-copy .button { width: 100%; }
   .lightbox { padding: 12px; }.lightbox-panel { max-width: calc(100vw - 24px); max-height: calc(100vh - 24px); border-radius: 22px; }.lightbox-panel > img { max-height: calc(100vh - 112px); border-radius: 15px; }.lightbox-panel figcaption { min-height: 64px; }.lightbox-panel figcaption > span:last-child { display: none; }.lightbox-close { top: 17px; right: 17px; }
   .about { padding: 75px 0 90px; }.about-photo { width: 94%; min-height: 470px; }.about-copy { margin-top: -72px; padding: 100px 27px 42px; border-radius: 30px; }.about-lead { font-size: 20px !important; }.quote-icon { top: 36px; right: 28px; }
   .booking { width: calc(100% - 16px); margin-bottom: 70px; padding: 42px 14px 14px; border-radius: 34px; gap: 35px; }.booking-copy { padding: 0 10px; }.booking-copy > p { font-size: 14px; }.booking-form { min-height: 540px; padding: 25px 18px; border-radius: 24px; }

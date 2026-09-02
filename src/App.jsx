@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { ArrowDown, ArrowRight, Heart, MapPin, Quote, Sparkles } from 'lucide-react'
+import { ArrowDown, ArrowRight, Camera, Heart, MapPin, Quote, Sparkles } from 'lucide-react'
 import { Header } from './components/Header.jsx'
 import { Logo } from './components/Logo.jsx'
 import { BookingForm } from './components/BookingForm.jsx'
@@ -8,6 +8,10 @@ import { MessengerDock } from './components/MessengerDock.jsx'
 import { services } from './data/services.js'
 
 const portrait = '/images/mariia-shvarts.jpg'
+const firstClientWork = {
+  title: 'Парные косы с мини-пучками',
+  image: '/images/first-client-braided-buns.jpg',
+}
 
 export default function App() {
   const [selectedService, setSelectedService] = useState(null)
@@ -81,6 +85,30 @@ export default function App() {
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="portfolio section" id="portfolio">
+          <div className="portfolio-card glass">
+            <button
+              className="portfolio-photo"
+              type="button"
+              onClick={() => setSelectedService(firstClientWork)}
+              aria-label="Открыть фото первой работы Маши"
+            >
+              <img src={firstClientWork.image} alt="Первая работа Маши — парные косы с мини-пучками" loading="lazy" />
+              <span className="portfolio-zoom"><Camera size={17} /> Посмотреть ближе</span>
+            </button>
+            <div className="portfolio-copy">
+              <span className="eyebrow"><Heart size={13} fill="currentColor" /> Настоящая работа Маши</span>
+              <h2>Первая клиентка.<br /><em>Особенная история.</em></h2>
+              <p>Аккуратные парные косы с мини-пучками — лёгкая и удобная причёска, созданная с заботой о каждой пряди.</p>
+              <div className="portfolio-meta">
+                <span>Оренбург</span>
+                <span>Работа мастера</span>
+              </div>
+              <a className="button" href="#booking">Хочу такую причёску <ArrowRight size={18} /></a>
+            </div>
           </div>
         </section>
 

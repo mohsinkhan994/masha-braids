@@ -4,6 +4,7 @@ import { Logo } from './Logo.jsx'
 
 const links = [
   ['Услуги', '#services'],
+  ['Работы', '#portfolio'],
   ['О мастере', '#about'],
   ['Запись', '#booking'],
 ]
