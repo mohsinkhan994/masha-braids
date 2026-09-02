@@ -10,7 +10,7 @@ import { services } from './data/services.js'
 const portrait = '/images/mariia-shvarts.jpg'
 const firstClientWork = {
   title: 'Парные косы с мини-пучками',
-  image: '/images/first-client-braided-buns.jpg',
+  image: '/images/first-client-braided-buns-v2.jpg',
 }
 
 export default function App() {
