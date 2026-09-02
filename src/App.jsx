@@ -5,6 +5,7 @@ import { Logo } from './components/Logo.jsx'
 import { BookingForm } from './components/BookingForm.jsx'
 import { PhotoLightbox } from './components/PhotoLightbox.jsx'
 import { MessengerDock } from './components/MessengerDock.jsx'
+import { Seo } from './components/Seo.jsx'
 import { services } from './data/services.js'
 
 const portrait = '/images/mariia-shvarts.jpg'
@@ -19,6 +20,7 @@ export default function App() {
 
   return (
     <div className="page-shell">
+      <Seo />
       <div className="ambient ambient-one" />
       <div className="ambient ambient-two" />
       <Header />
@@ -28,7 +30,7 @@ export default function App() {
         <section className="hero section" id="home">
           <div className="hero-copy">
             <div className="eyebrow"><Sparkles size={14} /> Авторские причёски в Оренбурге</div>
-            <h1>Ваша красота —<br /><em>в каждой пряди.</em></h1>
+            <h1>Косы и причёски<br /><em>в Оренбурге.</em></h1>
             <p className="hero-lead">Косы и причёски, в которых вы чувствуете себя собой — только ещё прекраснее.</p>
             <div className="hero-actions">
               <a className="button" href="#booking">Создать свой образ <ArrowRight size={18} /></a>
@@ -121,6 +123,28 @@ export default function App() {
             <p className="about-lead">Я создаю причёски, которые не прячут вас, а подчёркивают вашу природную красоту.</p>
             <p>Для меня важно, чтобы вам было комфортно с первой минуты и до последней шпильки. Подберём образ вместе, бережно отнесёмся к волосам и обязательно оставим место для вашей индивидуальности.</p>
             <div className="signature">Маша <span>♡</span></div>
+          </div>
+        </section>
+
+        <section className="local-seo section" aria-labelledby="local-seo-title">
+          <div className="local-seo-heading">
+            <span className="eyebrow">Полезно перед записью</span>
+            <h2 id="local-seo-title">Плетение кос<br /><em>в Оренбурге</em></h2>
+            <p>Помогу подобрать красивую и удобную причёску под длину волос, ваш стиль и особенный повод.</p>
+          </div>
+          <div className="local-seo-grid">
+            <article className="glass">
+              <h3>Какие косы можно сделать?</h3>
+              <p>Французские и объёмные косы, афрокосы, бокс-брейды, корнроу и элегантные плетёные пучки.</p>
+            </article>
+            <article className="glass">
+              <h3>Сколько времени занимает плетение?</h3>
+              <p>От одного часа для лёгкой причёски до нескольких часов для сложного долговременного плетения.</p>
+            </article>
+            <article className="glass">
+              <h3>Как записаться к мастеру?</h3>
+              <p>Оставьте заявку на сайте или напишите Маше в WhatsApp, Telegram или MAX. Запись доступна в Оренбурге.</p>
+            </article>
           </div>
         </section>
 

@@ -32,3 +32,14 @@ The Web3Forms access key is intended for browser use. Never add an email passwor
 ```bash
 npm run build
 ```
+
+## Search visibility after deployment
+
+The page includes Russian local-search metadata, crawl directives, a favicon, social preview tags, a sitemap, and `HairSalon` structured data. The canonical production URL is `https://masha-braids.vercel.app/`.
+
+After the final Vercel URL or custom domain is ready:
+
+1. Add the site to Google Search Console and Yandex Webmaster.
+2. Request indexing for the home page.
+3. Create matching Google Business Profile and Yandex Business listings for Orenburg.
+4. Add the final domain to those profiles and keep the business name, phone, city, and photos consistent.

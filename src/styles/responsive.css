@@ -12,6 +12,7 @@
   .service-grid { grid-template-columns: 1fr 1fr; }
   .portfolio-card { grid-template-columns: 1fr; }.portfolio-photo { min-height: 620px; }.portfolio-copy { padding: 58px 46px; }
   .about { grid-template-columns: 1fr; }.about-photo { width: min(500px, 88%); min-height: 600px; margin: 0 auto; }.about-copy { margin-top: -90px; padding-top: 115px; }
+  .local-seo { grid-template-columns: 1fr; gap: 32px; }.local-seo-heading { position: static; }.local-seo-heading > p { max-width: 650px; }
   .booking { padding: 55px; grid-template-columns: 1fr; gap: 45px; }
 }
 
@@ -29,6 +30,7 @@
   .portfolio { padding: 55px 0 35px; }.portfolio-card { border-radius: 30px; }.portfolio-photo { min-height: 470px; border-radius: 23px; }.portfolio-copy { padding: 43px 21px 35px; }.portfolio-copy > p { font-size: 14px; }.portfolio-copy .button { width: 100%; }
   .lightbox { padding: 12px; }.lightbox-panel { max-width: calc(100vw - 24px); max-height: calc(100vh - 24px); border-radius: 22px; }.lightbox-panel > img { max-height: calc(100vh - 112px); border-radius: 15px; }.lightbox-panel figcaption { min-height: 64px; }.lightbox-panel figcaption > span:last-child { display: none; }.lightbox-close { top: 17px; right: 17px; }
   .about { padding: 75px 0 90px; }.about-photo { width: 94%; min-height: 470px; }.about-copy { margin-top: -72px; padding: 100px 27px 42px; border-radius: 30px; }.about-lead { font-size: 20px !important; }.quote-icon { top: 36px; right: 28px; }
+  .local-seo { padding: 20px 0 80px; }.local-seo-grid article { padding: 24px 21px; }.local-seo-grid h3 { font-size: 21px; }
   .booking { width: calc(100% - 16px); margin-bottom: 70px; padding: 42px 14px 14px; border-radius: 34px; gap: 35px; }.booking-copy { padding: 0 10px; }.booking-copy > p { font-size: 14px; }.booking-form { min-height: 540px; padding: 25px 18px; border-radius: 24px; }
   .footer { width: calc(100% - 24px); grid-template-columns: 1fr auto; padding: 24px; }.footer p { display: none; }
   .messenger-dock-title { display: none; }.messenger-dock { bottom: 10px; }.messenger-link { width: 45px; height: 45px; }
