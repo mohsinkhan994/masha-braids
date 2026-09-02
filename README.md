@@ -1,4 +1,4 @@
-# MASHA Braid Atelier
+# Маша и Косы
 
 React and Vite landing page for Mariia Shvarts' hairstyling business in Orenburg.
 

@@ -4,6 +4,7 @@ import { Header } from './components/Header.jsx'
 import { Logo } from './components/Logo.jsx'
 import { BookingForm } from './components/BookingForm.jsx'
 import { PhotoLightbox } from './components/PhotoLightbox.jsx'
+import { MessengerDock } from './components/MessengerDock.jsx'
 import { services } from './data/services.js'
 
 const portrait = '/images/mariia-shvarts.jpg'
@@ -17,6 +18,7 @@ export default function App() {
       <div className="ambient ambient-one" />
       <div className="ambient ambient-two" />
       <Header />
+      <MessengerDock />
 
       <main>
         <section className="hero section" id="home">
@@ -109,7 +111,7 @@ export default function App() {
         <Logo />
         <p>Красота, сплетённая с любовью.</p>
         <a href="#home">Наверх ↑</a>
-        <small>© {new Date().getFullYear()} MASHA braid atelier</small>
+        <small>© {new Date().getFullYear()} «Маша и Косы» · студия плетения</small>
       </footer>
       <PhotoLightbox service={selectedService} onClose={closeLightbox} />
     </div>

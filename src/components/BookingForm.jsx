@@ -22,8 +22,8 @@ export function BookingForm() {
     const form = event.currentTarget
     const formData = new FormData(form)
     formData.append('access_key', accessKey)
-    formData.append('subject', 'Новая заявка на причёску — MASHA Braid Atelier')
-    formData.append('from_name', 'Сайт MASHA Braid Atelier')
+    formData.append('subject', 'Новая заявка на причёску — «Маша и Косы»')
+    formData.append('from_name', 'Сайт студии «Маша и Косы»')
     formData.append('city', 'Оренбург')
     formData.append('page', window.location.href)
 

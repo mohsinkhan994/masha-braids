@@ -25,16 +25,37 @@ h1 em, h2 em { color: var(--berry); font-weight: 400; }
 .button-small { min-height: 42px; padding: 0 18px; }
 
 .site-header { position: fixed; z-index: 20; top: 20px; left: 50%; transform: translateX(-50%); width: min(1180px, calc(100% - 40px)); height: 68px; padding: 0 12px 0 20px; border-radius: 22px; display: flex; align-items: center; justify-content: space-between; }
-.logo { display: inline-flex; align-items: center; gap: 10px; }
-.logo-mark { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 50%; font: italic 24px Georgia, serif; color: white; background: var(--berry); }
+.logo { display: inline-flex; align-items: center; gap: 11px; }
+.logo-mark { position: relative; width: 44px; height: 44px; flex: 0 0 44px; display: grid; place-items: center; color: var(--berry); filter: drop-shadow(0 7px 11px rgba(111,49,61,.2)); transition: transform .3s ease; }
+.logo:hover .logo-mark { transform: rotate(-4deg) scale(1.04); }
+.logo-mark svg { width: 100%; height: 100%; overflow: visible; }
+.logo-strand { fill: none; stroke: #fff8f4; stroke-width: 3.4; stroke-linecap: round; }
+.logo-strand-center { stroke: #edbec2; }
+.logo-strand-right { opacity: .88; }
+.logo-spark { fill: none; stroke: #f7d7a9; stroke-width: 1.6; stroke-linecap: round; }
 .logo-copy { display: flex; flex-direction: column; line-height: 1; }
-.logo-copy strong { letter-spacing: .2em; font-size: 13px; }
-.logo-copy small { margin-top: 5px; color: var(--muted); font: italic 11px Georgia, serif; }
+.logo-wordmark { white-space: nowrap; font: 600 19px/1 Georgia, 'Times New Roman', serif; letter-spacing: -.025em; }
+.logo-wordmark span { position: relative; color: var(--berry); font-style: italic; }
+.logo-wordmark span::after { content: ''; position: absolute; right: 0; bottom: -2px; left: 0; height: 1px; border-radius: 999px; background: currentColor; transform: rotate(-3deg); }
+.logo-copy small { margin-top: 6px; color: var(--muted); text-transform: uppercase; letter-spacing: .16em; font-size: 8px; font-weight: 700; }
 .nav { display: flex; align-items: center; gap: 30px; font-size: 13px; font-weight: 650; }
 .nav > a:not(.button) { position: relative; }
 .nav > a:not(.button)::after { content: ''; position: absolute; left: 0; right: 100%; bottom: -5px; height: 1px; background: var(--berry); transition: right .2s; }
 .nav > a:not(.button):hover::after { right: 0; }
 .menu-button { display: none; border: 0; background: transparent; color: var(--ink); }
+
+.messenger-dock { position: fixed; z-index: 18; top: 50%; right: 18px; padding: 11px 9px; border-radius: 22px; display: flex; flex-direction: column; align-items: center; gap: 8px; transform: translateY(-50%); background: rgba(255,255,255,.52); }
+.messenger-dock-title { color: var(--muted); writing-mode: vertical-rl; transform: rotate(180deg); text-transform: uppercase; letter-spacing: .17em; font-size: 8px; font-weight: 800; }
+.messenger-list { display: flex; flex-direction: column; gap: 8px; }
+.messenger-link { position: relative; width: 43px; height: 43px; border: 1px solid rgba(255,255,255,.7); border-radius: 15px; display: grid; place-items: center; color: white; box-shadow: 0 8px 20px rgba(51,34,34,.14), inset 0 1px 0 rgba(255,255,255,.28); transition: transform .2s, box-shadow .2s; }
+.messenger-link:hover { transform: translateX(-3px) scale(1.04); box-shadow: 0 12px 24px rgba(51,34,34,.22); }
+.messenger-whatsapp { background: linear-gradient(145deg, #8d4b59, var(--berry)); }
+.messenger-telegram { background: linear-gradient(145deg, #c17f89, #965361); }
+.messenger-max { background: linear-gradient(145deg, #b88968, #896047); }
+.max-mark { font: italic 800 18px/1 Georgia, serif; }
+.messenger-tooltip { position: absolute; top: 50%; right: 53px; width: max-content; padding: 7px 10px; border-radius: 9px; color: white; background: rgba(48,32,33,.9); opacity: 0; transform: translate(6px,-50%); pointer-events: none; transition: opacity .2s, transform .2s; font-size: 10px; font-weight: 700; }
+.messenger-link:hover .messenger-tooltip, .messenger-link:focus-visible .messenger-tooltip { opacity: 1; transform: translate(0,-50%); }
+.messenger-pending { opacity: .48; cursor: not-allowed; }.messenger-pending:hover { transform: none; box-shadow: 0 8px 20px rgba(51,34,34,.14); }.pending-dot { position: absolute; top: 3px; right: 3px; width: 7px; height: 7px; border: 1px solid rgba(255,255,255,.8); border-radius: 50%; background: #f1c05c; }
 
 .hero { min-height: 790px; padding-top: 165px; display: grid; grid-template-columns: .93fr 1.07fr; align-items: center; gap: 60px; }
 .hero-copy { padding-bottom: 56px; }
