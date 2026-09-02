@@ -1,13 +1,60 @@
 import { useState } from 'react'
-import { CalendarDays, Check, MapPin } from 'lucide-react'
+import { AlertCircle, CalendarDays, Check, LoaderCircle, MapPin } from 'lucide-react'
 import { services } from '../data/services.js'
+
+const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
 
 export function BookingForm() {
   const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
-    setSent(true)
+    if (status === 'submitting') return
+
+    if (!accessKey || accessKey === 'your_access_key_here') {
+      setStatus('error')
+      setErrorMessage('Форма почти готова — добавьте ключ Web3Forms в настройках сайта.')
+      return
+    }
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    formData.append('access_key', accessKey)
+    formData.append('subject', 'Новая заявка на причёску — MASHA Braid Atelier')
+    formData.append('from_name', 'Сайт MASHA Braid Atelier')
+    formData.append('city', 'Оренбург')
+    formData.append('page', window.location.href)
+
+    setStatus('submitting')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(Object.fromEntries(formData)),
+      })
+      const result = await response.json()
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Не удалось отправить заявку')
+      }
+
+      form.reset()
+      setSent(true)
+      setStatus('success')
+    } catch {
+      setStatus('error')
+      setErrorMessage('Не получилось отправить заявку. Проверьте интернет и попробуйте ещё раз.')
+    }
+  }
+
+  function resetForm() {
+    setSent(false)
+    setStatus('idle')
+    setErrorMessage('')
   }
 
   return (
@@ -17,7 +64,7 @@ export function BookingForm() {
           <span><Check size={28} /></span>
           <h3>Заявка отправлена!</h3>
           <p>Спасибо! Маша свяжется с вами, чтобы обсудить образ и удобное время.</p>
-          <button className="text-button" type="button" onClick={() => setSent(false)}>Отправить ещё одну</button>
+          <button className="text-button" type="button" onClick={resetForm}>Отправить ещё одну</button>
         </div>
       ) : (
         <>
@@ -45,7 +92,13 @@ export function BookingForm() {
             Пожелания <span className="optional">необязательно</span>
             <textarea name="message" rows="3" placeholder="Дата, длина волос, идеи…" />
           </label>
-          <button className="button button-wide" type="submit"><CalendarDays size={18} /> Оставить заявку</button>
+          <input className="botcheck" type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" aria-hidden="true" />
+          {status === 'error' && (
+            <p className="form-error" role="alert"><AlertCircle size={16} /> {errorMessage}</p>
+          )}
+          <button className="button button-wide" type="submit" disabled={status === 'submitting'}>
+            {status === 'submitting' ? <><LoaderCircle className="spinner" size={18} /> Отправляем…</> : <><CalendarDays size={18} /> Оставить заявку</>}
+          </button>
           <p className="form-note"><MapPin size={15} /> Сейчас принимаем записи только в Оренбурге</p>
         </>
       )}
